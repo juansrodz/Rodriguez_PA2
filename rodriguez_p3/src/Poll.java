@@ -7,9 +7,10 @@ public class Poll {
 		// TODO Auto-generated method stub
 		String[] topics = new String[5];
 		int[][] responses = new int[5][10];
-		
-		
-		boolean done = false; 
+		int voteTotal = 0;
+		boolean done = false;
+
+		float avg = 0.0; 
 		
 		Scanner in = new Scanner(System.in);
 		
@@ -49,6 +50,11 @@ public class Poll {
 				System.out.printf("Rate topic: %s\n", topics[4]);
 				counter = in.nextInt();
 				responses[4][4] += counter;
+				
+			/*	for (int i = 0; i < 5; i++){
+					if ()
+				}
+			*/
 			}
 			if(choice == 2) {
 				done = true;
@@ -57,7 +63,11 @@ public class Poll {
 			
 		}
 		for (int i = 0; i < 5; i++)
-		System.out.printf("You response for topic 1.%s was %d", topics[i] ,responses[i][i]);
+		System.out.printf("Your response for topic %d.%s was %d\n", i + 1, topics[i] ,responses[i][i]);
+		
+		/*avg += responses[i][i];
+
+		System.out.printf("The avg for the responses was ", avg)*/
 
 	}
 }
